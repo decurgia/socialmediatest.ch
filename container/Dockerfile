@@ -12,6 +12,4 @@ WORKDIR /app/
 RUN pip install --root-user-action=ignore --upgrade pip
 RUN pip install --root-user-action=ignore --upgrade --no-cache-dir --requirement $REQUIREMENTS --disable-pip-version-check
 
-WORKDIR /app/socialmediacert/
-
-CMD ["python", "manage.py", "runserver"]
+CMD ["flask", "--app", "hello", "run", "--host=0.0.0.0"]
