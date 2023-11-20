@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  socialmediacert:
+    image: ghcr.io/gldecurtins/socialmediacert:latest
+    ports:
+      - "1712:1712"

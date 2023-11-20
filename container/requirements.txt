@@ -1,0 +1,4 @@
+Django==4.2.7
+#crispy-tailwind==0.5.0
+crispy-tailwind @ git+https://github.com/django-crispy-forms/crispy-tailwind.git
+gunicorn==20.1.0

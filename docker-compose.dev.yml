@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  socialmediacert-dev:
+    build: container
+    environment:
+      - SECRET_KEY="unsafe-secret-key"
+      - DEBUG=True
+    volumes:
+      - ./container/app:/app
+    ports:
+      - "127.0.0.1:8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
