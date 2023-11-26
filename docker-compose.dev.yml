@@ -7,4 +7,4 @@ services:
       - ./container/app:/app
     ports:
       - "127.0.0.1:5000:5000"
-    command: flask --app main run --debug --host=0.0.0.0
+    command: flask --app socialmediacert run --debug --host=0.0.0.0

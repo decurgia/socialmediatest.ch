@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Certificate{% endblock %}
+
+{% block content %} View your certificate.
+{% for certificate in certificates %}
+<h2>{{ certificate['email_hash'] }}</h2>
+Valid until: {{ certificate['valid_until'] }}
+{% endfor %}
+{% endblock %}
