@@ -1,19 +1,31 @@
-DROP TABLE IF EXISTS certificate;
+DROP TABLE IF EXISTS test;
 DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS certificate;
 
-CREATE TABLE certificate (
-  email_hash TEXT PRIMARY KEY,
-  valid_until TEXT NOT NULL
+CREATE TABLE test (
+  test_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  number_of_questions INTEGER NOT NULL DEFAULT 10,
+  pass_quota REAL NOT NULL DEFAULT 1.00
 );
 
 CREATE TABLE question (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_test INTEGER NOT NULL,
   question TEXT NOT NULL,
-  option1 TEXT,
-  option2 TEXT,
+  option1 TEXT NOT NULL,
+  option2 TEXT NOT NULL,
   option3 TEXT,
   option4 TEXT,
-  answer TEXT
+  answer INTEGER NOT NULL,
+  FOREIGN KEY(question_test) REFERENCES test(test_id)
 );
 
-INSERT INTO question 
+CREATE TABLE certificate (
+  email_hash TEXT NOT NULL,
+  certificate_test INTEGER NOT NULL,
+  valid_until TEXT NOT NULL,
+  FOREIGN KEY(certificate_test) REFERENCES test(test_id),
+  PRIMARY KEY (email_hash, certificate_test)
+);

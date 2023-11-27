@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% block title %}Test{% endblock %} {% block content
 %}
-<form>
+<form method="post">
   <div>
-    <label class="text-base font-semibold text-gray-900">Question</label>
+    <label class="text-base font-semibold text-gray-900"
+      >Question {{ session['questions_answered'] }}</label
+    >
     <p class="text-sm text-gray-500">{{ question['question'] }}</p>
     <fieldset class="mt-4">
       <legend class="sr-only">Answer</legend>
@@ -13,6 +15,8 @@
             id="option1"
             name="answer"
             type="radio"
+            value="1"
+            required
             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
           />
           <label
@@ -27,6 +31,7 @@
             id="option2"
             name="answer"
             type="radio"
+            value="2"
             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
           />
           <label
@@ -41,6 +46,7 @@
             id="option3"
             name="answer"
             type="radio"
+            value="3"
             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
           />
           <label
@@ -55,6 +61,7 @@
             id="option4"
             name="answer"
             type="radio"
+            value="4"
             class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
           />
           <label
