@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block title %}Test{% endblock %} {% block content
+%}
+<form>
+  <div>
+    <label class="text-base font-semibold text-gray-900">Question</label>
+    <p class="text-sm text-gray-500">{{ question['question'] }}</p>
+    <fieldset class="mt-4">
+      <legend class="sr-only">Answer</legend>
+      <div class="space-y-4">
+        {% if question['option1'] %}
+        <div class="flex items-center">
+          <input
+            id="option1"
+            name="answer"
+            type="radio"
+            class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+          <label
+            for="option1"
+            class="ml-3 block text-sm font-medium leading-6 text-gray-900"
+            >{{ question['option1'] }}</label
+          >
+        </div>
+        {% endif %} {% if question['option2'] %}
+        <div class="flex items-center">
+          <input
+            id="option2"
+            name="answer"
+            type="radio"
+            class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+          <label
+            for="option2"
+            class="ml-3 block text-sm font-medium leading-6 text-gray-900"
+            >{{ question['option2'] }}</label
+          >
+        </div>
+        {% endif %} {% if question['option3'] %}
+        <div class="flex items-center">
+          <input
+            id="option3"
+            name="answer"
+            type="radio"
+            class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+          <label
+            for="option3"
+            class="ml-3 block text-sm font-medium leading-6 text-gray-900"
+            >{{ question['option3'] }}</label
+          >
+        </div>
+        {% endif %} {% if question['option4'] %}
+        <div class="flex items-center">
+          <input
+            id="option4"
+            name="answer"
+            type="radio"
+            class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+          <label
+            for="option4"
+            class="ml-3 block text-sm font-medium leading-6 text-gray-900"
+            >{{ question['option4'] }}</label
+          >
+        </div>
+        {% endif %}
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-x-6">
+    <button type="reset" class="text-sm font-semibold leading-6 text-gray-900">
+      Reset
+    </button>
+    <button
+      type="submit"
+      class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+{% endblock %}
