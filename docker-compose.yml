@@ -1,12 +1,9 @@
 version: "3.9"
 
 services:
-  flask:
+  socialmediacert:
     build: container
-    environment:
-      - REQUIREMENTS=requirements.txt
-    volumes:
-      - ./container/app:/app
     ports:
       - "8000:8000"
-    command: gunicorn -w 4 
+    volumes:
+      - ./container/app:/app

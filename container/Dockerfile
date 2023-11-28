@@ -1,15 +1,14 @@
-# syntax=docker/dockerfile:1
 FROM python:3.12.0-alpine
 
-ARG REQUIREMENTS=requirements-dev.txt
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
 
 RUN apk add --no-cache git
 COPY ./app /app/
 
 WORKDIR /app/
 RUN pip install --root-user-action=ignore --upgrade pip
-RUN pip install --root-user-action=ignore --upgrade --no-cache-dir --requirement $REQUIREMENTS --disable-pip-version-check
+RUN pip install --root-user-action=ignore --upgrade --no-cache-dir --requirement requirements.txt --disable-pip-version-check
 
-CMD ["flask", "--app", "socialmediacert", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "-w", "4", "socialmediacert:create_app()"]
