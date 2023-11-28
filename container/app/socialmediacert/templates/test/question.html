@@ -1,9 +1,9 @@
-{% extends "base.html" %} {% block title %}Test{% endblock %} {% block content
-%}
+{% extends "base.html" %} {% block title %}Test question{% endblock %} {% block
+content %} {{ session['previous_answer'] }}
 <form method="post">
   <div>
     <label class="text-base font-semibold text-gray-900"
-      >Question {{ session['questions_answered'] }}</label
+      >Question {{ session['questions_answered'] + 1 }}</label
     >
     <p class="text-sm text-gray-500">{{ question['question'] }}</p>
     <fieldset class="mt-4">

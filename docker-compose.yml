@@ -2,6 +2,11 @@ version: "3.9"
 
 services:
   flask:
-    image: ghcr.io/gldecurtins/socialmediacert:latest
+    build: container
+    environment:
+      - REQUIREMENTS=requirements.txt
+    volumes:
+      - ./container/app:/app
     ports:
-      - "1712:1712"
+      - "8000:8000"
+    command: gunicorn -w 4 

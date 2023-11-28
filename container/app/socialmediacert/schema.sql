@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS certificate;
 CREATE TABLE test (
   test_id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
+  short_description TEXT NOT NULL,
   description TEXT NOT NULL,
   number_of_questions INTEGER NOT NULL DEFAULT 10,
   pass_quota REAL NOT NULL DEFAULT 1.00

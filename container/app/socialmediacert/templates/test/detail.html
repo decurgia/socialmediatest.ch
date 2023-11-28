@@ -1,20 +1,11 @@
-{% extends "base.html" %} {% block title %}Test result{% endblock %} {% block
+{% extends "base.html" %} {% block title %}Test detail{% endblock %} {% block
 content %}
 <div class="space-y-12">
   <div class="border-b border-gray-900/10 pb-12">
     <h2 class="text-base font-semibold leading-7 text-gray-900">
       {{ test['name']}}
     </h2>
-    {% if test_passed %}
-    <p class="mt-1 text-sm leading-6 text-green-600">
-      Congratulations! You've passed the test!
-    </p>
-    {% else %}
-    <p class="mt-1 text-sm leading-6 text-red-600">
-      It didn't work out this time! Please go again through the learning
-      material and start over.
-    </p>
-    {% endif %}
+    <p class="mt-1 text-sm leading-6 text-gray-600">{{ test['description']}}</p>
   </div>
 
   <div class="border-b border-gray-900/10 pb-12">
@@ -23,9 +14,9 @@ content %}
         <label
           for="first-name"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >Test quota</label
+          >Number of questions</label
         >
-        <div class="mt-2">{{ test_quota * 100 }} %</div>
+        <div class="mt-2">{{ test['number_of_questions'] }}</div>
       </div>
 
       <div class="sm:col-span-3">

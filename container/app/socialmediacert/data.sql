@@ -1,6 +1,6 @@
-INSERT OR REPLACE INTO test (test_id, name, description, number_of_questions, pass_quota)
+INSERT OR REPLACE INTO test (test_id, name, short_description, description, number_of_questions, pass_quota)
 VALUES
-  (1, 'Social Media Test Version 1', 'First version of the social media test, ment to be taken by teenagers.', 10, 0.8);
+  (1, 'Social Media Test', 'First version of the social media test, ment to be taken by teenagers.', 'This social media test validates expected behavior.', 10, 0.8);
 
 INSERT OR REPLACE INTO question (question_id, question_test, question, option1, option2, option3, option4, answer)
 VALUES

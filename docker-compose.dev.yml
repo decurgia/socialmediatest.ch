@@ -3,6 +3,8 @@ version: "3.9"
 services:
   flask-dev:
     build: container
+    environment:
+      - REQUIREMENTS=requirements-dev.txt
     volumes:
       - ./container/app:/app
     ports:
