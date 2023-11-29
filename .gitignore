@@ -11,13 +11,14 @@ venv/
 docker/
 .env
 
-# Django
+# Django, Flask
 *.log
 *.pot
 *.pyc
 __pycache__/
 _static/
 _media/
+instance/
 
 # SQLite
 db.sqlite3
