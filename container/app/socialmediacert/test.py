@@ -62,10 +62,10 @@ def question():
         db = get_db()
         correct_answer = db.execute(
             "SELECT answer FROM question WHERE question_id = ? AND answer = ?",
-            {
+            (
                 questions[0],
                 answer,
-            },
+            ),
         ).fetchone()
         # if record queried, then the answer is correct
         if correct_answer:
