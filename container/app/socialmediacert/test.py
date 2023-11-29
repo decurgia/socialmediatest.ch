@@ -100,7 +100,6 @@ def result():
     test = db.execute(
         "SELECT test_id, name, pass_quota FROM test WHERE test_id = ?", (test_id,)
     ).fetchone()
-    session["previous_answer"] = f"{correct_answers} {questions_answered}"
     test_quota = float(correct_answers / questions_answered)
     if test_quota >= float(test["pass_quota"]):
         test_passed = True
@@ -113,7 +112,7 @@ def result():
             },
         )
         db = get_db()
-        db.execute(
+        db.executemany(
             "INSERT OR REPLACE INTO certificate VALUES(:email_hash, :certificate_test, :valid_until)",
             certificate,
         )
