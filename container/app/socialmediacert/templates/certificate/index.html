@@ -51,7 +51,14 @@ content %}
     </div>
   </div>
   {% else %}
-  <div>No certificates found for current E-Mail address.</div>
+  <div>
+    No certificates found for current E-Mail address.
+    <a
+      href="{{ url_for('email') }}"
+      class="text-indigo-600 hover:text-indigo-900"
+      >Change E-Mail.</a
+    >
+  </div>
   {% endif %}
 </div>
 {% endblock %}

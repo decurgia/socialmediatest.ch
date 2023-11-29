@@ -7,3 +7,4 @@ services:
       - "8000:8000"
     volumes:
       - ./container/app:/app
+    command: gunicorn -w 1 'socialmediacert:create_app()'

@@ -52,11 +52,19 @@
             <td
               class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0"
             >
+              {% if session['email'] %}
               <a
                 href="{{ url_for('test.start', test_id=test['test_id']) }}"
                 class="text-indigo-600 hover:text-indigo-900"
                 >Start test</a
               >
+              {% else %}
+              <a
+                href="{{ url_for('email') }}"
+                class="text-indigo-600 hover:text-indigo-900"
+                >Set E-Mail</a
+              >
+              {% endif %}
             </td>
           </tr>
           {% endfor %}
