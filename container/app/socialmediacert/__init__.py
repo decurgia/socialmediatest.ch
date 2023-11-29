@@ -48,19 +48,16 @@ def create_app(test_config=None):
     def email():
         if request.method == "POST":
             email = request.form["email"]
-            error = None
 
             if not email:
-                error = "Email is required."
-
-            if error is not None:
-                flash(error)
+                session["email"] = ""
+                session["email_hash"] = ""
             else:
                 session["email"] = email.strip()
                 session["email_hash"] = hashlib.sha256(
                     email.encode("utf-8").strip().lower()
                 ).hexdigest()
-                return redirect(url_for("email"))
+            return redirect(url_for("email"))
         return render_template("email.html")
 
     from . import learn
