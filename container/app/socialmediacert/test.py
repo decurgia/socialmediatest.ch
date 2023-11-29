@@ -26,8 +26,8 @@ def index():
 def detail(test_id):
     db = get_db()
     test = db.execute(
-        "SELECT test_id, name, description, number_of_questions, pass_quota FROM test WHERE test_id = %(test_id)d",
-        {"test_id": test_id},
+        "SELECT test_id, name, description, number_of_questions, pass_quota FROM test WHERE test_id = ?",
+        (test_id,),
     ).fetchone()
     return render_template("test/detail.html", test=test)
 
@@ -36,8 +36,8 @@ def detail(test_id):
 def start(test_id):
     db = get_db()
     questions = db.execute(
-        "SELECT question_id FROM question WHERE question_test = %(test_id)d",
-        {"test_id": test_id},
+        "SELECT question_id FROM question WHERE question_test = ?",
+        (test_id,),
     ).fetchall()
     question_list = []
     for question in questions:
@@ -61,8 +61,11 @@ def question():
 
         db = get_db()
         correct_answer = db.execute(
-            "SELECT answer FROM question WHERE question_id = %(question_id)d AND answer = %(answer)d",
-            {"question_id": questions[0], "answer": answer},
+            "SELECT answer FROM question WHERE question_id = ? AND answer = ?",
+            {
+                questions[0],
+                answer,
+            },
         ).fetchone()
         # if record queried, then the answer is correct
         if correct_answer:
@@ -77,8 +80,8 @@ def question():
     try:
         db = get_db()
         question = db.execute(
-            "SELECT question_id, question, option1, option2, option3, option4 FROM question WHERE question_id = %(question_id)d",
-            {"question_id": questions[0]},
+            "SELECT question_id, question, option1, option2, option3, option4 FROM question WHERE question_id = ?",
+            (questions[0],),
         ).fetchone()
         return render_template("test/question.html", question=question)
     except IndexError:
@@ -95,8 +98,7 @@ def result():
 
     db = get_db()
     test = db.execute(
-        "SELECT test_id, name, pass_quota FROM test WHERE test_id = %(test_id)d",
-        {"test_id": test_id},
+        "SELECT test_id, name, pass_quota FROM test WHERE test_id = ?", (test_id,)
     ).fetchone()
     session["previous_answer"] = f"{correct_answers} {questions_answered}"
     test_quota = float(correct_answers / questions_answered)
@@ -105,8 +107,12 @@ def result():
         valid_until = date.today() + timedelta(days=365)
         db = get_db()
         db.execute(
-            "INSERT OR REPLACE INTO certificate (email_hash, certificate_test, valid_until) VALUES ('%(email_hash)s', %(test_id)d, '%(valid_until)s')",
-            {"email_hash": email_hash, "test_id": test_id, "valid_until": valid_until},
+            "INSERT OR REPLACE INTO certificate (email_hash, certificate_test, valid_until) VALUES ('?', ?, '?')",
+            (
+                email_hash,
+                test_id,
+                valid_until,
+            ),
         )
         db.commit()
 

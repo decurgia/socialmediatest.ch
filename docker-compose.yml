@@ -5,3 +5,5 @@ services:
     image: ghcr.io/gldecurtins/socialmediacert:main
     ports:
       - "8000:8000"
+    volumes:
+      - ./instance:/app/instance
