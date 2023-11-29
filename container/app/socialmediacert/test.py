@@ -105,14 +105,17 @@ def result():
     if test_quota >= float(test["pass_quota"]):
         test_passed = True
         valid_until = date.today() + timedelta(days=365)
+        certificate = (
+            {
+                "email_hash": email_hash,
+                "certificate_test": test_id,
+                "valid_until": valid_until,
+            },
+        )
         db = get_db()
         db.execute(
-            "INSERT OR REPLACE INTO certificate (email_hash, certificate_test, valid_until) VALUES ('?', ?, '?')",
-            (
-                email_hash,
-                test_id,
-                valid_until,
-            ),
+            "INSERT OR REPLACE INTO certificate VALUES(:email_hash, :certificate_test, :valid_until)",
+            certificate,
         )
         db.commit()
 
