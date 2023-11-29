@@ -21,6 +21,7 @@ def index():
     if "email_hash" in session:
         db = get_db()
         certificates = db.execute(
-            f"SELECT test.name, certificate.valid_until FROM certificate INNER JOIN test ON certificate.certificate_test = test.test_id WHERE email_hash = '{session['email_hash']}'"
+            "SELECT test.name, certificate.valid_until FROM certificate INNER JOIN test ON certificate.certificate_test = test.test_id WHERE email_hash = '%(email_hash)s'",
+            {"email_hash": session["email_hash"]},
         ).fetchall()
     return render_template("certificate/index.html", certificates=certificates)
