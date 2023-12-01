@@ -8,12 +8,19 @@ from flask import url_for
 from flask import session
 from flask import flash
 
+from flask_babel import Babel
+
 import hashlib
+
+
+def get_locale():
+    return request.accept_languages.best_match(["en", "de"])
 
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    babel = Babel(app, locale_selector=get_locale)
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "socialmediacert.sqlite"),

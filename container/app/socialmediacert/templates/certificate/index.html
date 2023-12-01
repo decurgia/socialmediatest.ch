@@ -41,7 +41,7 @@ content %}
                 {{ certificate['name'] }}
               </td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                {{ certificate['valid_until'] }}
+                {{ certificate['valid_until']|dateformat('long') }}
               </td>
             </tr>
             {% endfor %}

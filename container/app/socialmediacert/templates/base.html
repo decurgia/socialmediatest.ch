@@ -80,17 +80,17 @@
                     href="{{ url_for('learn.index') }}"
                     class="{{ 'bg-gray-900 text-white' if request.path == url_for('learn.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
                     aria-current="page"
-                    >Learn</a
+                    >{{ gettext("Learn") }}</a
                   >
                   <a
                     href="{{ url_for('test.index') }}"
                     class="{{ 'bg-gray-900 text-white' if request.path == url_for('test.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
-                    >Test</a
+                    >{{ gettext("Test") }}</a
                   >
                   <a
                     href="{{ url_for('certificate.index') }}"
                     class="{{ 'bg-gray-900 text-white' if request.path == url_for('certificate.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
-                    >Certificate</a
+                    >{{ gettext("Certificate") }}</a
                   >
                 </div>
               </div>

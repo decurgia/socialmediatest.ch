@@ -26,7 +26,7 @@ CREATE TABLE question (
 CREATE TABLE certificate (
   email_hash TEXT NOT NULL,
   certificate_test INTEGER NOT NULL,
-  valid_until TEXT NOT NULL,
+  valid_until DATE NOT NULL,
   FOREIGN KEY(certificate_test) REFERENCES test(test_id),
   PRIMARY KEY (email_hash, certificate_test)
 );
