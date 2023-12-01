@@ -30,3 +30,7 @@ CREATE TABLE certificate (
   FOREIGN KEY(certificate_test) REFERENCES test(test_id),
   PRIMARY KEY (email_hash, certificate_test)
 );
+
+CREATE INDEX "email_hash" ON "certificate" (
+	"email_hash"
+);
