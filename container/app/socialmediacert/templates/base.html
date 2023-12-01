@@ -102,7 +102,7 @@
                     type="button"
                     class="ml-3 inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                   >
-                    Set E-Mail
+                    {{ gettext("Set E-Mail") }}
                   </button></a
                 >
               </div>
@@ -114,7 +114,8 @@
       <header class="bg-white shadow-sm">
         <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
           <h1 class="text-lg font-semibold leading-6 text-gray-900">
-            {% block header %}Hello {{ session['email'] }}{% endblock %}
+            {% block header %}{{ gettext("Hello") }} {{ session['email'] }}{%
+            endblock %}
           </h1>
         </div>
       </header>
@@ -135,7 +136,7 @@
               <a
                 href="{{ url_for('about') }}"
                 class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-                >About</a
+                >{{ gettext("About") }}</a
               >
             </div>
           </nav>

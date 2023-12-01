@@ -5,10 +5,11 @@ content %}
   <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
       <h1 class="text-base font-semibold leading-6 text-gray-900">
-        Your certificates
+        {{ gettext("Your certificates") }}
       </h1>
       <p class="mt-2 text-sm text-gray-700">
-        A list of all the valid certificates related to your E-mail address.
+        {{ gettext("A list of all the valid certificates related to your E-mail
+        address.") }}
       </p>
     </div>
   </div>
@@ -22,13 +23,13 @@ content %}
                 scope="col"
                 class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
               >
-                Name
+                {{ gettext("Name") }}
               </th>
               <th
                 scope="col"
                 class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
               >
-                Valid until
+                {{ gettext("Valid until") }}
               </th>
             </tr>
           </thead>
@@ -52,11 +53,11 @@ content %}
   </div>
   {% else %}
   <div>
-    No certificates found for current E-Mail address.
+    {{ gettext("No certificates found for current E-Mail address.") }}
     <a
       href="{{ url_for('email') }}"
       class="text-indigo-600 hover:text-indigo-900"
-      >Change E-Mail.</a
+      >{{ gettext("Change E-Mail.") }}</a
     >
   </div>
   {% endif %}

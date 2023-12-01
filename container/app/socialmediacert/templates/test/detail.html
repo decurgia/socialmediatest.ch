@@ -14,7 +14,7 @@ content %}
         <label
           for="first-name"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >Number of questions</label
+          >{{ gettext("Number of questions") }}</label
         >
         <div class="mt-2">{{ test['number_of_questions'] }}</div>
       </div>
@@ -23,7 +23,7 @@ content %}
         <label
           for="last-name"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >Pass quota</label
+          >{{ gettext("Pass quota") }}</label
         >
         <div class="mt-2">{{ test['pass_quota'] * 100 }} %</div>
       </div>

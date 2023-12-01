@@ -7,12 +7,12 @@ content %}
     </h2>
     {% if test_passed %}
     <p class="mt-1 text-sm leading-6 text-green-600">
-      Congratulations! You've passed the test!
+      {{ gettext("Congratulations! You've passed the test!") }}
     </p>
     {% else %}
     <p class="mt-1 text-sm leading-6 text-red-600">
-      It didn't work out this time! Please go again through the learning
-      material and start over.
+      {{ gettext("It didn't work out this time! Please go again through the
+      learning material and start over.") }}
     </p>
     {% endif %}
   </div>
@@ -23,7 +23,7 @@ content %}
         <label
           for="first-name"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >Test quota</label
+          >{{ gettext("Test quota") }}</label
         >
         <div class="mt-2">{{ test_quota * 100 }} %</div>
       </div>
@@ -32,7 +32,7 @@ content %}
         <label
           for="last-name"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >Pass quota</label
+          >{{ gettext("Pass quota") }}</label
         >
         <div class="mt-2">{{ test['pass_quota'] * 100 }} %</div>
       </div>

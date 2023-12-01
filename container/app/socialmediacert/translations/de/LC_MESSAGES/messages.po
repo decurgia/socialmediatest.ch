@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-01 20:39+0000\n"
-"PO-Revision-Date: 2023-12-01 20:40+0000\n"
+"POT-Creation-Date: 2023-12-01 21:17+0000\n"
+"PO-Revision-Date: 2023-12-01 21:17+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
@@ -20,13 +20,113 @@ msgstr ""
 
 #: templates/base.html:83
 msgid "Learn"
-msgstr "Lerne"
+msgstr "Lernen"
 
 #: templates/base.html:88
 msgid "Test"
-msgstr "Test"
+msgstr "Testen"
 
 #: templates/base.html:93
 msgid "Certificate"
 msgstr "Zertifikat"
+
+#: templates/base.html:105 templates/test/index.html:65
+msgid "Set E-Mail"
+msgstr "Setze E-Mail"
+
+#: templates/base.html:117
+msgid "Hello"
+msgstr "Hallo"
+
+#: templates/base.html:139
+msgid "About"
+msgstr "Über"
+
+#: templates/email.html:10
+msgid "Identification"
+msgstr "Identifikation"
+
+#: templates/index.html:56
+msgid "Enroll Now"
+msgstr "Jetzt anmelden"
+
+#: templates/certificate/index.html:8
+msgid "Your certificates"
+msgstr "Deine Zertifikate"
+
+#: templates/certificate/index.html:11
+msgid ""
+"A list of all the valid certificates related to your E-mail\n"
+"        address."
+msgstr "Diese E-Mail Adresse hat folgende Zertifikate:"
+
+#: templates/certificate/index.html:26 templates/test/index.html:13
+msgid "Name"
+msgstr "Name"
+
+#: templates/certificate/index.html:32
+msgid "Valid until"
+msgstr "Gültig bis"
+
+#: templates/certificate/index.html:56
+msgid "No certificates found for current E-Mail address."
+msgstr "Keine Zertifikate für diese E-Mail Adresse gefunden."
+
+#: templates/certificate/index.html:60
+msgid "Change E-Mail."
+msgstr "E-Mail ändern."
+
+#: templates/test/detail.html:17
+msgid "Number of questions"
+msgstr "Anzahl Fragen"
+
+#: templates/test/detail.html:26 templates/test/result.html:35
+msgid "Pass quota"
+msgstr "Quote zum Bestehen"
+
+#: templates/test/index.html:19
+msgid "Short description"
+msgstr "Kurzbeschreibung"
+
+#: templates/test/index.html:25
+msgid "Questions"
+msgstr "Fragen"
+
+#: templates/test/index.html:28
+msgid "Action"
+msgstr "Aktion"
+
+#: templates/test/index.html:59
+msgid "Start test"
+msgstr "Test starten"
+
+#: templates/test/question.html:6
+msgid "Question"
+msgstr "Frage"
+
+#: templates/test/question.html:10
+msgid "Answer"
+msgstr "Antwort"
+
+#: templates/test/question.html:80
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: templates/test/question.html:86
+msgid "Submit"
+msgstr "Nächste Frage"
+
+#: templates/test/result.html:10
+msgid "Congratulations! You've passed the test!"
+msgstr "Herzlichen Glückwunsch! Du hast den Test bestanden!"
+
+#: templates/test/result.html:14
+msgid ""
+"It didn't work out this time! Please go again through the\n"
+"      learning material and start over."
+msgstr "Es hat leider nicht gereicht!"
+
+#: templates/test/result.html:26
+msgid "Test quota"
+msgstr "Test Quota"
 

@@ -10,22 +10,22 @@
               scope="col"
               class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
             >
-              Name
+              {{ gettext("Name") }}
             </th>
             <th
               scope="col"
               class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell"
             >
-              Short description
+              {{ gettext("Short description") }}
             </th>
             <th
               scope="col"
               class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
             >
-              Questions
+              {{ gettext("Questions") }}
             </th>
             <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
-              <span class="sr-only">Action</span>
+              <span class="sr-only">{{ gettext("Action") }}</span>
             </th>
           </tr>
         </thead>
@@ -56,13 +56,13 @@
               <a
                 href="{{ url_for('test.start', test_id=test['test_id']) }}"
                 class="text-indigo-600 hover:text-indigo-900"
-                >Start test</a
+                >{{ gettext("Start test") }}</a
               >
               {% else %}
               <a
                 href="{{ url_for('email') }}"
                 class="text-indigo-600 hover:text-indigo-900"
-                >Set E-Mail</a
+                >{{ gettext("Set E-Mail") }}</a
               >
               {% endif %}
             </td>
