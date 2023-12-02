@@ -1,0 +1,49 @@
+{
+    "short_name": "socialmediacert",
+    "name": "Social Media Certificate",
+    "icons": [
+      {
+        "src": "/static/socialmediacert-icon.svg",
+        "type": "image/svg",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/static/socialmediacert-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/static/socialmediacert-icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#b91c1c",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#b91c1c",
+    "shortcuts": [
+      {
+        "name": "Learn",
+        "short_name": "learn",
+        "description": "Learn about social media and how to navigate within.",
+        "url": "/learn"
+      },
+      {
+        "name": "Test",
+        "short_name": "test",
+        "description": "Take a test to get certified in social media.",
+        "url": "/test"
+      },
+      {
+        "name": "Certificate",
+        "short_name": "certificate",
+        "description": "View your social media certificates.",
+        "url": "/certificate"
+      }
+    ],
+    "description": "Social Media Certificate - learn, test, certificate"
+  }
+  
