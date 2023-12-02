@@ -43,10 +43,14 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
+        if get_locale() is "de":
+            return render_template("index_de.html")
         return render_template("index.html")
 
     @app.route("/about")
     def about():
+        if get_locale() is "de":
+            return render_template("about_de.html")
         return render_template("about.html")
 
     @app.route("/email", methods=("GET", "POST"))

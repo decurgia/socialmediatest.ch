@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block title %}Willkommen{% endblock %} {% block
+content %}
+
+<header class="bg-indigo-500 text-white p-6">
+  <h1 class="text-3xl">
+    Erschliesse dein digitales Potenzial: Social Media Test- &
+    Zertifikatsprogramm
+  </h1>
+  <p>
+    Willkommen zu einer Reise der Entdeckung, des Wachstums und der digitalen
+    Ermächtigung!
+  </p>
+</header>
+
+<section id="for-teens" class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Für Jugendliche</h2>
+  <p class="mb-4">
+    Bist du bereit, deine Leidenschaft für Social Media in eine Superkraft zu
+    verwandeln? Schliesse dich Tausenden von Jugendlichen an, die ihre
+    Online-Fähigkeiten verbessern, Selbstvertrauen gewinnen und ein wertvolles
+    Social Media Zertifikat erwerben.
+  </p>
+  <h3 class="text-lg font-bold mb-2">Warum den Test machen?</h3>
+  <ul class="list-disc ml-8 mb-4">
+    <li>Stech heraus in der digitalen Menge</li>
+    <li>Verbessere deine Chancen für Studium und Karriere</li>
+    <li>Meistere die Kunst der verantwortungsbewussten Online-Präsenz</li>
+    <li>Werde ein digitaler Influencer mit Sinn und Zweck</li>
+  </ul>
+</section>
+
+<section id="for-parents" class="py-8 px-4 bg-gray-200">
+  <h2 class="text-2xl font-bold mb-4">Für Eltern</h2>
+  <p class="mb-4">
+    Investiere in die Zukunft deines Kindes im digitalen Zeitalter. Unser Social
+    Media Test- & Zertifikatsprogramm geht über Filter und Hashtags hinaus; es
+    ist eine umfassende Reise zur Entwicklung von kritischem Denken, Kreativität
+    und verantwortungsbewusster digitaler Bürgerschaft.
+  </p>
+  <h3 class="text-lg font-bold mb-2">Was wir bieten:</h3>
+  <ul class="list-disc ml-8 mb-4">
+    <li>Fachmännisch erstellter Lehrplan</li>
+    <li>Praktische Fähigkeiten für eine technisch versierte Welt</li>
+    <li>Ein anerkanntes Zertifikat für die Leistungen deines Teenagers</li>
+  </ul>
+  <h3 class="text-lg font-bold mb-2">Eltern-Jugend Bindung</h3>
+  <p class="mb-4">
+    Begebe dich gemeinsam auf dieses Lernabenteuer! Stärke deine Bindung,
+    während ihr gemeinsam die digitale Landschaft durchquert.
+  </p>
+</section>
+
+<section id="get-started" class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Bereit, loszulegen?</h2>
+  <p class="mb-4">
+    Dein Pass zu einer strahlenderen digitalen Zukunft ist nur einen Klick
+    entfernt. Schliesse dich uns an und gestalte die nächste Generation
+    verantwortungsbewusster digitaler Benutzer mit!
+  </p>
+  <a
+    href="{{ url_for('learn.index') }}"
+    class="bg-indigo-500 text-white px-4 py-2 rounded"
+    >{{ gettext("Jetzt anmelden") }}</a
+  >
+  <p class="mt-4">Scroll nicht einfach, strebe nach digitaler Exzellenz!</p>
+</section>
+{% endblock %}

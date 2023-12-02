@@ -40,7 +40,7 @@ msgstr "Hallo"
 
 #: templates/base.html:139
 msgid "About"
-msgstr "Über"
+msgstr "Über uns"
 
 #: templates/email.html:10
 msgid "Identification"
