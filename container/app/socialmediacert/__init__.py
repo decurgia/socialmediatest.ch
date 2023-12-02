@@ -10,8 +10,6 @@ from flask import flash
 
 from flask_babel import Babel
 
-import hashlib
-
 
 def get_locale():
     return request.accept_languages.best_match(["en", "de"])
@@ -57,13 +55,9 @@ def create_app(test_config=None):
             email = request.form["email"]
 
             if not email:
-                session["email"] = ""
-                session["email_hash"] = ""
+                session.pop("email")
             else:
                 session["email"] = email.strip()
-                session["email_hash"] = hashlib.sha256(
-                    email.encode("utf-8").strip().lower()
-                ).hexdigest()
             return redirect(url_for("email"))
         return render_template("email.html")
 

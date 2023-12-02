@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Test{% endblock %} {% block content
 %}
-<div class="mt-8 flow-root">
+<div class="px-4 sm:px-6 lg:px-8">
   <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
       <table class="min-w-full divide-y divide-gray-300">
@@ -35,7 +35,7 @@
             <td
               class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
             >
-              <a href="{{ url_for('test.detail', test_id=test['test_id']) }}"
+              <a href="{{ url_for('test.detail', test_id=test['id']) }}"
                 >{{ test['name'] }}</a
               >
             </td>
@@ -54,7 +54,7 @@
             >
               {% if session['email'] %}
               <a
-                href="{{ url_for('test.start', test_id=test['test_id']) }}"
+                href="{{ url_for('test.start', test_id=test['id']) }}"
                 class="text-indigo-600 hover:text-indigo-900"
                 >{{ gettext("Start test") }}</a
               >

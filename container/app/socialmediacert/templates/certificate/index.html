@@ -39,7 +39,10 @@ content %}
               <td
                 class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
               >
-                {{ certificate['name'] }}
+                <a
+                  href="{{ url_for('test.detail', test_id=certificate['id']) }}"
+                  >{{ certificate['name'] }}</a
+                >
               </td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                 {{ certificate['valid_until']|dateformat('long') }}

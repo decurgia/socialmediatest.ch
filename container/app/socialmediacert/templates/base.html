@@ -78,18 +78,18 @@
                 <div class="ml-10 flex items-baseline space-x-4">
                   <a
                     href="{{ url_for('learn.index') }}"
-                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('learn.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
+                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('learn.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-lg font-medium"
                     aria-current="page"
                     >{{ gettext("Learn") }}</a
                   >
                   <a
                     href="{{ url_for('test.index') }}"
-                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('test.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
+                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('test.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-lg font-medium"
                     >{{ gettext("Test") }}</a
                   >
                   <a
                     href="{{ url_for('certificate.index') }}"
-                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('certificate.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-sm font-medium"
+                    class="{{ 'bg-gray-900 text-white' if request.path == url_for('certificate.index') else 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded-md px-3 py-2 text-lg font-medium"
                     >{{ gettext("Certificate") }}</a
                   >
                 </div>
@@ -100,7 +100,7 @@
                 <a href="{{ url_for('email') }}"
                   ><button
                     type="button"
-                    class="ml-3 inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    class="ml-3 inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                   >
                     {{ gettext("Set E-Mail") }}
                   </button></a
