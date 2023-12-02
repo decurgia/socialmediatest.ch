@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Test question{% endblock %} {% block
-content %}
+{% extends "base.html" %} {% block title %}{{ gettext("Test question") }} {{
+session['questions_answered'] + 1 }}{% endblock %} {% block content %}
 <form method="post">
   <div class="px-4 sm:px-6 lg:px-8">
     <div>

@@ -8,6 +8,7 @@ from datetime import date
 from datetime import timedelta
 
 from .db import get_db
+from . import get_locale
 
 bp = Blueprint("certificate", __name__, url_prefix="/certificate")
 
@@ -21,7 +22,7 @@ def index():
         certificates = db.execute(
             "SELECT test.id, test.name, certificate.valid_until FROM certificate INNER JOIN test ON certificate.fk_test_id = test.id AND test.locale = ? WHERE email_hash = ?",
             (
-                request.accept_languages.best_match(["en", "de"]),
+                get_locale(),
                 email_hash,
             ),
         ).fetchall()

@@ -43,13 +43,13 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        if get_locale() is "de":
+        if get_locale() == "de":
             return render_template("index_de.html")
         return render_template("index.html")
 
     @app.route("/about")
     def about():
-        if get_locale() is "de":
+        if get_locale() == "de":
             return render_template("about_de.html")
         return render_template("about.html")
 
@@ -68,6 +68,9 @@ def create_app(test_config=None):
                     email.encode("utf-8").strip().lower()
                 ).hexdigest()
             return redirect(url_for("email"))
+
+        if get_locale() == "de":
+            return render_template("email_de.html")
         return render_template("email.html")
 
     from . import learn

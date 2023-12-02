@@ -10,6 +10,7 @@ import random
 import hashlib
 
 from .db import get_db
+from . import get_locale
 
 bp = Blueprint("test", __name__, url_prefix="/test")
 
@@ -19,7 +20,7 @@ def index():
     db = get_db()
     tests = db.execute(
         "SELECT id, name, short_description, number_of_questions, pass_quota FROM test WHERE locale = ?",
-        (request.accept_languages.best_match(["en", "de"]),),
+        (get_locale(),),
     ).fetchall()
     return render_template("test/index.html", tests=tests)
 
@@ -31,7 +32,7 @@ def detail(test_id):
         "SELECT id, name, description, number_of_questions, pass_quota FROM test WHERE id = ? AND locale = ?",
         (
             test_id,
-            request.accept_languages.best_match(["en", "de"]),
+            get_locale(),
         ),
     ).fetchone()
     return render_template("test/detail.html", test=test)
@@ -44,14 +45,14 @@ def start(test_id):
         "SELECT number_of_questions FROM test WHERE id = ? AND locale = ?",
         (
             test_id,
-            request.accept_languages.best_match(["en", "de"]),
+            get_locale(),
         ),
     ).fetchone()
     questions = db.execute(
         "SELECT id FROM question WHERE fk_test_id = ? AND locale = ?",
         (
             test_id,
-            request.accept_languages.best_match(["en", "de"]),
+            get_locale(),
         ),
     ).fetchall()
     question_list = []
@@ -67,7 +68,7 @@ def start(test_id):
 
 @bp.route("/question", methods=("GET", "POST"))
 def question():
-    locale = request.accept_languages.best_match(["en", "de"])
+    locale = get_locale()
     questions = list(session["questions"])
 
     if request.method == "POST":
@@ -120,7 +121,7 @@ def result():
         "SELECT id, name, pass_quota FROM test WHERE id = ? AND locale = ?",
         (
             test_id,
-            request.accept_languages.best_match(["en", "de"]),
+            get_locale(),
         ),
     ).fetchone()
     test_quota = float(correct_answers / questions_answered)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-01 21:17+0000\n"
+"POT-Creation-Date: 2023-12-02 13:56+0000\n"
 "PO-Revision-Date: 2023-12-01 21:17+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,37 +18,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
-#: templates/base.html:83
-msgid "Learn"
-msgstr "Lernen"
-
-#: templates/base.html:88
-msgid "Test"
-msgstr "Testen"
-
-#: templates/base.html:93
-msgid "Certificate"
-msgstr "Zertifikat"
-
-#: templates/base.html:105 templates/test/index.html:65
-msgid "Set E-Mail"
-msgstr "Setze E-Mail"
-
-#: templates/base.html:117
-msgid "Hello"
-msgstr "Hallo"
-
-#: templates/base.html:139
+#: templates/about.html:1 templates/about_de.html:1 templates/base.html:145
 msgid "About"
 msgstr "Über uns"
 
-#: templates/email.html:10
+#: templates/base.html:82 templates/learn/index.html:1
+#: templates/learn/index_de.html:1
+msgid "Learn"
+msgstr "Lernen"
+
+#: templates/base.html:87 templates/test/index.html:1
+msgid "Test"
+msgstr "Testen"
+
+#: templates/base.html:92 templates/certificate/index.html:1
+msgid "Certificate"
+msgstr "Zertifikat"
+
+#: templates/base.html:123
+msgid "Hello"
+msgstr "Hallo"
+
+#: templates/email.html:1 templates/email_de.html:1
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: templates/email.html:10 templates/email_de.html:10
 msgid "Identification"
 msgstr "Identifikation"
 
-#: templates/index.html:56
+#: templates/index.html:1 templates/index_de.html:1
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: templates/index.html:56 templates/index_de.html:63
 msgid "Enroll Now"
-msgstr "Jetzt anmelden"
+msgstr "Jetzt vorbereiten"
 
 #: templates/certificate/index.html:8
 msgid "Your certificates"
@@ -68,13 +73,17 @@ msgstr "Name"
 msgid "Valid until"
 msgstr "Gültig bis"
 
-#: templates/certificate/index.html:56
+#: templates/certificate/index.html:59
 msgid "No certificates found for current E-Mail address."
 msgstr "Keine Zertifikate für diese E-Mail Adresse gefunden."
 
-#: templates/certificate/index.html:60
+#: templates/certificate/index.html:63
 msgid "Change E-Mail."
 msgstr "E-Mail ändern."
+
+#: templates/test/detail.html:1
+msgid "Test detail"
+msgstr "Test Details"
 
 #: templates/test/detail.html:17
 msgid "Number of questions"
@@ -100,21 +109,33 @@ msgstr "Aktion"
 msgid "Start test"
 msgstr "Test starten"
 
-#: templates/test/question.html:6
+#: templates/test/index.html:65
+msgid "Set E-Mail"
+msgstr "Setze E-Mail"
+
+#: templates/test/question.html:1
+msgid "Test question"
+msgstr "Test Frage"
+
+#: templates/test/question.html:7
 msgid "Question"
 msgstr "Frage"
 
-#: templates/test/question.html:10
+#: templates/test/question.html:12
 msgid "Answer"
 msgstr "Antwort"
 
-#: templates/test/question.html:80
+#: templates/test/question.html:85
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: templates/test/question.html:86
+#: templates/test/question.html:91
 msgid "Submit"
 msgstr "Nächste Frage"
+
+#: templates/test/result.html:1
+msgid "Test result"
+msgstr "Test Resultat"
 
 #: templates/test/result.html:10
 msgid "Congratulations! You've passed the test!"
@@ -129,4 +150,3 @@ msgstr "Es hat leider nicht gereicht!"
 #: templates/test/result.html:26
 msgid "Test quota"
 msgstr "Test Quota"
-
