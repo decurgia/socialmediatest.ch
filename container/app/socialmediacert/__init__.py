@@ -55,9 +55,14 @@ def create_app(test_config=None):
             email = request.form["email"]
 
             if not email:
-                session.pop("email")
+                session.clear()
             else:
+                import hashlib
+
                 session["email"] = email.strip()
+                session["email_hash"] = hashlib.sha256(
+                    email.encode("utf-8").strip().lower()
+                ).hexdigest()
             return redirect(url_for("email"))
         return render_template("email.html")
 

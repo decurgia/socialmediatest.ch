@@ -124,14 +124,13 @@ def result():
         ),
     ).fetchone()
     test_quota = float(correct_answers / questions_answered)
-    if test_quota >= float(test["pass_quota"]):
+    if "email_hash" in session and test_quota >= float(test["pass_quota"]):
         email = session["email"]
         test_passed = True
-        email_hash = hashlib.sha256(email.encode("utf-8").strip().lower()).hexdigest()
         valid_until = date.today() + timedelta(days=365)
         certificate = (
             {
-                "email_hash": email_hash,
+                "email_hash": session["email_hash"],
                 "certificate_test": test_id,
                 "valid_until": valid_until,
             },

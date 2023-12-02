@@ -15,9 +15,8 @@ bp = Blueprint("certificate", __name__, url_prefix="/certificate")
 @bp.route("/")
 def index():
     certificates = []
-    if "email" in session:
-        email = session["email"]
-        email_hash = hashlib.sha256(email.encode("utf-8").strip().lower()).hexdigest()
+    if "email_hash" in session:
+        email_hash = session["email_hash"]
         db = get_db()
         certificates = db.execute(
             "SELECT test.id, test.name, certificate.valid_until FROM certificate INNER JOIN test ON certificate.fk_test_id = test.id AND test.locale = ? WHERE email_hash = ?",
