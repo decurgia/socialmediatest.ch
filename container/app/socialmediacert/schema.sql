@@ -38,3 +38,8 @@ CREATE TABLE certificate (
 CREATE INDEX "email_hash" ON "certificate" (
 	"email_hash"
 );
+
+CREATE INDEX "id_locale" ON "test" (
+  "id", 
+  "locale"
+);
