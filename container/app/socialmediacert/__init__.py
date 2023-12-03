@@ -3,10 +3,6 @@ import os
 from flask import Flask
 from flask import render_template
 from flask import request
-from flask import redirect
-from flask import url_for
-from flask import session
-from flask import flash
 
 from flask_babel import Babel
 
@@ -52,26 +48,6 @@ def create_app(test_config=None):
         if get_locale() == "de":
             return render_template("about_de.html")
         return render_template("about.html")
-
-    @app.route("/email", methods=("GET", "POST"))
-    def email():
-        if request.method == "POST":
-            email = request.form["email"]
-
-            if not email:
-                session.clear()
-            else:
-                import hashlib
-
-                session["email"] = email.strip()
-                session["email_hash"] = hashlib.sha256(
-                    email.encode("utf-8").strip().lower()
-                ).hexdigest()
-            return redirect(url_for("email"))
-
-        if get_locale() == "de":
-            return render_template("email_de.html")
-        return render_template("email.html")
 
     from . import learn
     from . import test

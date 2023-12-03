@@ -7,7 +7,6 @@ from flask import request
 from datetime import date
 from datetime import timedelta
 import random
-import hashlib
 
 from .db import get_db
 from . import get_locale
@@ -38,32 +37,55 @@ def detail(test_id):
     return render_template("test/detail.html", test=test)
 
 
-@bp.route("/<int:test_id>/start")
+@bp.route("/<int:test_id>/start", methods=("GET", "POST"))
 def start(test_id):
+    if request.method == "POST":
+        # get E-Mail from the form
+        email = request.form["email"]
+        if not email:
+            session.clear()
+            return redirect(url_for("test.start", test_id=test_id))
+
+        # get Test detail
+        db = get_db()
+        test = db.execute(
+            "SELECT number_of_questions FROM test WHERE id = ? AND locale = ?",
+            (
+                test_id,
+                get_locale(),
+            ),
+        ).fetchone()
+
+        # get the related questions and shuffle
+        questions = db.execute(
+            "SELECT id FROM question WHERE fk_test_id = ? AND locale = ?",
+            (
+                test_id,
+                get_locale(),
+            ),
+        ).fetchall()
+        question_list = []
+        for question in questions:
+            question_list.append(question["id"])
+        random.shuffle(question_list)
+
+        # put everything into the session
+        session["email"] = email.strip()
+        session["test_id"] = test_id
+        session["correct_answers"] = 0
+        session["questions_answered"] = 0
+        session["questions"] = question_list[: test["number_of_questions"]]
+        return redirect(url_for("test.question"))
+
     db = get_db()
     test = db.execute(
-        "SELECT number_of_questions FROM test WHERE id = ? AND locale = ?",
+        "SELECT id, name, description, number_of_questions, pass_quota FROM test WHERE id = ? AND locale = ?",
         (
             test_id,
             get_locale(),
         ),
     ).fetchone()
-    questions = db.execute(
-        "SELECT id FROM question WHERE fk_test_id = ? AND locale = ?",
-        (
-            test_id,
-            get_locale(),
-        ),
-    ).fetchall()
-    question_list = []
-    for question in questions:
-        question_list.append(question["id"])
-    random.shuffle(question_list)
-    session["test_id"] = test_id
-    session["correct_answers"] = 0
-    session["questions_answered"] = 0
-    session["questions"] = question_list[: test["number_of_questions"]]
-    return redirect(url_for("test.question"))
+    return render_template("test/start.html", test=test)
 
 
 @bp.route("/question", methods=("GET", "POST"))
@@ -125,13 +147,16 @@ def result():
         ),
     ).fetchone()
     test_quota = float(correct_answers / questions_answered)
-    if "email_hash" in session and test_quota >= float(test["pass_quota"]):
+    if "email" in session and test_quota >= float(test["pass_quota"]):
+        import hashlib
+
         email = session["email"]
+        email_hash = hashlib.sha256(email.encode("utf-8").strip().lower()).hexdigest()
         test_passed = True
         valid_until = date.today() + timedelta(days=365)
         certificate = (
             {
-                "email_hash": session["email_hash"],
+                "email_hash": email_hash,
                 "certificate_test": test_id,
                 "valid_until": valid_until,
             },
