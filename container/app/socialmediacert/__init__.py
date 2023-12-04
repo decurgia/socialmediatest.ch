@@ -50,7 +50,8 @@ def create_app(test_config=None):
             return render_template("about_de.html")
         return render_template("about.html")
     
-    @app.route('/robots.txt')
+    @app.route("/favicon.ico")
+    @app.route("/robots.txt")
     def static_from_root():
         return send_from_directory(app.static_folder, request.path[1:])
 
