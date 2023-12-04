@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import send_from_directory
 
 from flask_babel import Babel
 
@@ -48,6 +49,10 @@ def create_app(test_config=None):
         if get_locale() == "de":
             return render_template("about_de.html")
         return render_template("about.html")
+    
+    @app.route('/robots.txt')
+    def static_from_root():
+        return send_from_directory(app.static_folder, request.path[1:])
 
     from . import learn
     from . import test
