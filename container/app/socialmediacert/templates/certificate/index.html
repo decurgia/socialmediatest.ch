@@ -10,7 +10,7 @@ endblock %} {% block content %}
           {{ gettext("Your certificates") }}
         </h2>
         <p class="mt-1 text-sm leading-6 text-gray-600">
-          {{ gettext("These certificates are bound to your E-Mail address.") }}
+          {{ gettext("These certificates are bound to your email address.") }}
         </p>
       </div>
 
@@ -18,7 +18,7 @@ endblock %} {% block content %}
         <label
           for="email"
           class="block text-sm font-medium leading-6 text-gray-900"
-          >{{ gettext("E-Mail") }}</label
+          >{{ gettext("Email") }}</label
         >
         <div class="mt-2">
           <div
@@ -35,12 +35,12 @@ endblock %} {% block content %}
           </div>
         </div>
       </div>
-      <div class="mt-6 flex items-center justify-end gap-x-6">
+      <div class="sm:col-span-1 mt-6 flex items-center justify-end gap-x-6">
         <button
           type="submit"
           class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          {{ gettext("Set E-Mail") }}
+          {{ gettext("List certificates") }}
         </button>
       </div>
     </div>
@@ -65,6 +65,9 @@ endblock %} {% block content %}
               >
                 {{ gettext("Valid until") }}
               </th>
+              <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+                <span class="sr-only">{{ gettext("Action") }}</span>
+              </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200">
@@ -81,13 +84,22 @@ endblock %} {% block content %}
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                 {{ certificate['valid_until']|dateformat('long') }}
               </td>
+              <td
+                class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0"
+              >
+                <a
+                  href="{{ url_for('certificate.detail', test_id=certificate['id']) }}"
+                  class="text-indigo-600 hover:text-indigo-900"
+                  >{{ gettext("Show certificate") }}</a
+                >
+              </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
         {% else %}
         <div class="py-3.5 pl-4 pr-3 text-left text-sm text-red-900 sm:pl-0">
-          {{ gettext("No certificates found for current E-Mail address.") }}
+          {{ gettext("No certificates found for current email address.") }}
         </div>
         {% endif %}
       </div>

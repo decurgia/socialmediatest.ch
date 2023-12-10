@@ -40,7 +40,7 @@ def detail(test_id):
 @bp.route("/<int:test_id>/start", methods=("GET", "POST"))
 def start(test_id):
     if request.method == "POST":
-        # get E-Mail from the form
+        # get email from the form
         email = request.form["email"]
         if not email:
             session.clear()

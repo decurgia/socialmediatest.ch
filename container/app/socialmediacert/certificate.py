@@ -40,3 +40,22 @@ def index():
             ),
         ).fetchall()
     return render_template("certificate/index.html", certificates=certificates)
+
+
+@bp.route("/<int:test_id>")
+def detail(test_id):
+    if "email" in session:
+        import hashlib
+
+        email = session["email"]
+        email_hash = hashlib.sha256(email.encode("utf-8").strip().lower()).hexdigest()
+        db = get_db()
+        certificate = db.execute(
+            "SELECT test.name, test.description, test.number_of_questions, test.pass_quota, certificate.valid_until FROM certificate INNER JOIN test ON certificate.fk_test_id = test.id AND test.locale = ? WHERE email_hash = ? AND fk_test_id = ?",
+            (
+                get_locale(),
+                email_hash,
+                test_id,
+            ),
+        ).fetchone()
+    return render_template("certificate/detail.html", certificate=certificate)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-03 10:30+0000\n"
+"POT-Creation-Date: 2023-12-10 11:08+0000\n"
 "PO-Revision-Date: 2023-12-01 21:17+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -47,46 +47,60 @@ msgstr "Willkommen"
 msgid "Enroll Now"
 msgstr "Jetzt vorbereiten"
 
+#: templates/certificate/detail.html:1
+msgid "Certificate detail"
+msgstr "Zertifikat Details"
+
+#: templates/certificate/detail.html:19 templates/test/detail.html:17
+#: templates/test/start.html:17
+msgid "Number of questions"
+msgstr "Anzahl Fragen"
+
+#: templates/certificate/detail.html:28 templates/test/detail.html:26
+#: templates/test/result.html:35 templates/test/start.html:26
+msgid "Pass quota"
+msgstr "Quote zum Bestehen"
+
+#: templates/certificate/detail.html:40 templates/certificate/index.html:21
+#: templates/test/start.html:50
+msgid "Email"
+msgstr "E-Mail"
+
+#: templates/certificate/detail.html:49 templates/certificate/index.html:66
+msgid "Valid until"
+msgstr "Gültig bis"
+
 #: templates/certificate/index.html:10
 msgid "Your certificates"
 msgstr "Deine Zertifikate"
 
 #: templates/certificate/index.html:13
-msgid "These certificates are bound to your E-Mail address."
+msgid "These certificates are bound to your email address."
 msgstr "Folgende Zertifikate gehören zu dieser E-Mail Adresse."
 
-#: templates/certificate/index.html:21 templates/test/start.html:48
-msgid "E-Mail"
-msgstr "E-Mail"
-
 #: templates/certificate/index.html:43
-msgid "Set E-Mail"
-msgstr "Setze E-Mail"
+msgid "List certificates"
+msgstr "Zeige Zertifikate"
 
-#: templates/certificate/index.html:59 templates/test/index.html:13
+#: templates/certificate/index.html:60 templates/test/index.html:13
 msgid "Name"
 msgstr "Name"
 
-#: templates/certificate/index.html:65
-msgid "Valid until"
-msgstr "Gültig bis"
+#: templates/certificate/index.html:69 templates/test/index.html:28
+msgid "Action"
+msgstr "Aktion"
 
-#: templates/certificate/index.html:94
-msgid "No certificates found for current E-Mail address."
+#: templates/certificate/index.html:93
+msgid "Show certificate"
+msgstr "Zeige Zertifikat"
+
+#: templates/certificate/index.html:102
+msgid "No certificates found for current email address."
 msgstr "Keine Zertifikate für diese E-Mail Adresse gefunden."
 
 #: templates/test/detail.html:1
 msgid "Test detail"
 msgstr "Test Details"
-
-#: templates/test/detail.html:17 templates/test/start.html:17
-msgid "Number of questions"
-msgstr "Anzahl Fragen"
-
-#: templates/test/detail.html:26 templates/test/result.html:35
-#: templates/test/start.html:26
-msgid "Pass quota"
-msgstr "Quote zum Bestehen"
 
 #: templates/test/index.html:19
 msgid "Short description"
@@ -96,11 +110,7 @@ msgstr "Kurzbeschreibung"
 msgid "Questions"
 msgstr "Fragen"
 
-#: templates/test/index.html:28
-msgid "Action"
-msgstr "Aktion"
-
-#: templates/test/index.html:58 templates/test/start.html:71
+#: templates/test/index.html:58 templates/test/start.html:72
 msgid "Start test"
 msgstr "Test starten"
 
@@ -146,11 +156,10 @@ msgstr "Test Quote"
 msgid "Test start"
 msgstr "Test Start"
 
-#: templates/test/start.html:37
+#: templates/test/start.html:39
 msgid "Identification"
 msgstr "Identifikation"
 
-#: templates/test/start.html:40
-msgid "The certificate will be bound to your E-Mail address."
+#: templates/test/start.html:42
+msgid "The certificate will be bound to your email address."
 msgstr "Das Zertifikat wird auf folgende E-Mail Adresse ausgestellt."
-

@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}{{ gettext("Certificate detail") }}{%
+endblock %} {% block content %}
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="border-b border-gray-900/10 pb-12">
+    <h2 class="text-base font-semibold leading-7 text-gray-900">
+      {{ certificate['name']}}
+    </h2>
+    <p class="mt-1 text-sm leading-6 text-gray-600">
+      {{ certificate['description']}}
+    </p>
+  </div>
+
+  <div class="border-b border-gray-900/10 pb-12">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+      <div class="sm:col-span-3">
+        <label
+          for="number-of-questions"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >{{ gettext("Number of questions") }}</label
+        >
+        <div class="mt-2">{{ certificate['number_of_questions'] }}</div>
+      </div>
+
+      <div class="sm:col-span-3">
+        <label
+          for="pass-quota"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >{{ gettext("Pass quota") }}</label
+        >
+        <div class="mt-2">{{ certificate['pass_quota'] * 100 }} %</div>
+      </div>
+    </div>
+  </div>
+  <div class="border-b border-gray-900/10 pb-12">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+      <div class="sm:col-span-3">
+        <label
+          for="email"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >{{ gettext("Email") }}</label
+        >
+        <div class="mt-2">{{ session['email'] }}</div>
+      </div>
+
+      <div class="sm:col-span-3">
+        <label
+          for="valid-until"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >{{ gettext("Valid until") }}</label
+        >
+        <div class="mt-2">
+          {{ certificate['valid_until']|dateformat('long') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
