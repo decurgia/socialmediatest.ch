@@ -6,4 +6,4 @@ services:
     ports:
       - "8080:8000"
     volumes:
-      - ./instance:/app/instance
+      - /volume2/docker/socialmediaprotest/instance:/app/instance
