@@ -9,4 +9,4 @@ services:
       - ./container/app:/app
     environment:
       - FLASK_DEBUG=True
-    command: gunicorn --reload -w 1 'socialmediaprotest:create_app()'
+    command: gunicorn --reload -w 1 'socialmediatest:create_app()'

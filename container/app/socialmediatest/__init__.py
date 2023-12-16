@@ -18,7 +18,7 @@ def create_app(test_config=None):
     babel = Babel(app, locale_selector=get_locale)
     app.config.from_mapping(
         SECRET_KEY="dev",
-        DATABASE=os.path.join(app.instance_path, "socialmediacert.sqlite"),
+        DATABASE=os.path.join(app.instance_path, "socialmediatest.sqlite"),
     )
 
     if test_config is None:
@@ -49,7 +49,7 @@ def create_app(test_config=None):
         if get_locale() == "de":
             return render_template("about_de.html")
         return render_template("about.html")
-    
+
     @app.route("/favicon.ico")
     @app.route("/robots.txt")
     def static_from_root():

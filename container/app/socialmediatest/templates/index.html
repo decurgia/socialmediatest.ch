@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}{{ gettext("Welcome") }}{% endblock
+%} {% block content %}
+<header class="bg-indigo-500 text-white p-6">
+  <h1 class="text-3xl">Are you ready to use social media?</h1>
+  <p>Social Media Test & Certificate Program</p>
+</header>
+
+<section id="for-you" class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">For You</h2>
+  <p class="mb-4">
+    Are you ready to prove that you are prepared to use social media? Learn
+    about social media, take the test and earn a valuable Social Media
+    Certificate.
+  </p>
+  <h3 class="text-lg font-bold mb-2">Why Take the Test?</h3>
+  <ul class="list-disc ml-8 mb-4">
+    <li>Prove that you are ready to use social media</li>
+    <li>Assess your understanding of online safety and digital etiquette</li>
+  </ul>
+</section>
+
+<section id="for-parents" class="py-8 px-4 bg-gray-200">
+  <h2 class="text-2xl font-bold mb-4">For Parents</h2>
+  <p class="mb-4">
+    Prepare your child to navigate through social media. This website offers
+    various tests and certificates that assess readiness.
+  </p>
+  <h3 class="text-lg font-bold mb-2">What We Offer:</h3>
+  <ul class="list-disc ml-8 mb-4">
+    <li>Links to learning material to prepare for the test</li>
+    <li>Tricky questions which should assess readiness</li>
+    <li>Certificate validation</li>
+  </ul>
+</section>
+
+<section id="get-started" class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+  <p class="mb-4">
+    Your passport to a brighter, safer digital future is just a click away.
+  </p>
+  <a
+    href="{{ url_for('learn.index') }}"
+    class="bg-indigo-500 text-white px-4 py-2 rounded"
+    >{{ gettext("Enroll Now") }}</a
+  >
+  <p class="mt-4">Don't just scroll. Learn and take your test today!</p>
+</section>
+{% endblock %}
