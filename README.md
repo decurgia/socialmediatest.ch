@@ -1,16 +1,16 @@
-# SocialMediaProTest
+# Social Media Test
 
-Social Media Pro Test / Social Media Certificate
+Social Media Test & Certificate
 
 ## Documentation
 
-https://github.com/gldecurtins/socialmediaprotest/wiki
+https://github.com/gldecurtins/socialmediatest/wiki
 
 ## Docker development setup
 
 ```
 cd ~
-git clone https://github.com/gldecurtins/socialmediaprotest
+git clone https://github.com/gldecurtins/socialmediatest
 docker-compose up
 ```
 
