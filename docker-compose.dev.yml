@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  socialmediacert:
+  socialmediaprotest:
     build: container
     ports:
       - "8000:8000"
@@ -9,4 +9,4 @@ services:
       - ./container/app:/app
     environment:
       - FLASK_DEBUG=True
-    command: gunicorn --reload -w 1 'socialmediacert:create_app()'
+    command: gunicorn --reload -w 1 'socialmediaprotest:create_app()'
