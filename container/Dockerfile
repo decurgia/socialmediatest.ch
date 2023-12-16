@@ -11,4 +11,4 @@ WORKDIR /app/
 RUN pip install --root-user-action=ignore --upgrade pip
 RUN pip install --root-user-action=ignore --upgrade --no-cache-dir --requirement requirements.txt --disable-pip-version-check
 
-CMD ["gunicorn", "-w", "4", "socialmediacert:create_app()"]
+CMD ["gunicorn", "-w", "4", "socialmediaprotest:create_app()"]

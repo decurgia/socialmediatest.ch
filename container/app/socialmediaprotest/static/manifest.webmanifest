@@ -1,6 +1,6 @@
 {
-    "short_name": "socialmediacert",
-    "name": "Social Media Certificate",
+    "short_name": "socialmediaprotest",
+    "name": "Social Media Pro Test & Certificate",
     "icons": [
       {
         "src": "/static/socialmediacert-icon.svg",
@@ -44,6 +44,6 @@
         "url": "/certificate"
       }
     ],
-    "description": "Social Media Certificate - learn, test, certificate"
+    "description": "Social Media Pro Test & Certificate - learn, test, certificate"
   }
   

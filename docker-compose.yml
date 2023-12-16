@@ -2,8 +2,8 @@ version: "3.9"
 
 services:
   socialmediacert:
-    image: ghcr.io/gldecurtins/socialmediaprotest:main
+    image: ghcr.io/gldecurtins/socialmediaprotest:latest
     ports:
-      - "8000:8000"
+      - "8080:8000"
     volumes:
       - ./instance:/app/instance
