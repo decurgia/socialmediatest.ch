@@ -42,7 +42,7 @@ def create_app(test_config=None):
     def index():
         if get_locale() == "de":
             return render_template("index_de.html")
-        return render_template("index.html")
+        return render_template("index_en.html")
 
     @app.route("/about")
     def about():

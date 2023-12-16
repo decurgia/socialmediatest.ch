@@ -1,67 +1,58 @@
 {% extends "base.html" %} {% block title %}{{ gettext("Welcome") }}{% endblock
 %} {% block content %}
-
-<header class="bg-indigo-500 text-white p-6">
-  <h1 class="text-3xl">
-    Erschliesse dein digitales Potenzial: Social Media Test- &
-    Zertifikatsprogramm
+<header class="text-center">
+  <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+    Bereit, soziale Medien zu benutzen?
   </h1>
-  <p>
-    Willkommen zu einer Reise der Entdeckung, des Wachstums und der digitalen
-    Ermächtigung!
+  <p class="mt-6 text-lg leading-8 text-gray-600">
+    Social Media Test- und Zertifikatsprogramm
   </p>
 </header>
 
-<section id="for-teens" class="py-8 px-4">
-  <h2 class="text-2xl font-bold mb-4">Für Jugendliche</h2>
+<section id="for-you" class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Für dich</h2>
   <p class="mb-4">
-    Bist du bereit, deine Leidenschaft für Social Media in eine Superkraft zu
-    verwandeln? Schliesse dich Tausenden von Jugendlichen an, die ihre
-    Online-Fähigkeiten verbessern, Selbstvertrauen gewinnen und ein wertvolles
-    Social Media Zertifikat erwerben.
+    Bist du bereit zu beweisen, dass du bereit bist, soziale Medien zu nutzen?
+    Erfahre mehr über soziale Medien, teste dein Wissen und erwerbe ein
+    wertvolles Social-Media-Zertifikat.
   </p>
   <h3 class="text-lg font-bold mb-2">Warum den Test machen?</h3>
   <ul class="list-disc ml-8 mb-4">
-    <li>Meistere die Kunst der verantwortungsbewussten Online-Präsenz</li>
-    <li>Verbessere deine Chancen für Studium und Karriere</li>
-    <li>Stech heraus in der digitalen Menge</li>
-    <li>Werde ein digitaler Influencer mit Sinn und Zweck</li>
+    <li>Beweise, dass du bereit bist, soziale Medien zu nutzen</li>
+    <li>
+      Bewerte dein Verständnis von Online-Sicherheit und digitaler Etikette
+    </li>
   </ul>
 </section>
 
 <section id="for-parents" class="py-8 px-4 bg-gray-200">
   <h2 class="text-2xl font-bold mb-4">Für Eltern</h2>
   <p class="mb-4">
-    Investiere in die Zukunft deines Kindes im digitalen Zeitalter. Unser Social
-    Media Test- & Zertifikatsprogramm geht über Filter und Hashtags hinaus; es
-    ist eine umfassende Reise zur Entwicklung von kritischem Denken, Kreativität
-    und verantwortungsbewusster digitaler Bürgerschaft.
+    Bereiten Sie Ihr Kind darauf vor, sich in den sozialen Medien
+    zurechtzufinden. Auf dieser Website werden verschiedene Tests und
+    Zertifikate zur Beurteilung der Bereitschaft angeboten.
   </p>
-  <h3 class="text-lg font-bold mb-2">Was wir bieten:</h3>
+  <h3 class="text-lg font-bold mb-2">Was wir anbieten:</h3>
   <ul class="list-disc ml-8 mb-4">
-    <li>Fachmännisch erstellter Lehrplan</li>
-    <li>Praktische Fähigkeiten für eine technisch versierte Welt</li>
-    <li>Ein anerkanntes Zertifikat für die Leistungen deines Teenagers</li>
+    <li>Links zu Lernmaterialien zur Prüfungsvorbereitung</li>
+    <li>Knifflige Fragen, die die Bereitschaft beurteilen sollen</li>
+    <li>Zertifikatsvalidierung</li>
   </ul>
-  <h3 class="text-lg font-bold mb-2">Eltern-Jugend Bindung</h3>
-  <p class="mb-4">
-    Begebe dich gemeinsam auf dieses Lernabenteuer! Stärke deine Bindung,
-    während ihr gemeinsam die digitale Landschaft durchquert.
-  </p>
 </section>
 
 <section id="get-started" class="py-8 px-4">
-  <h2 class="text-2xl font-bold mb-4">Bereit, loszulegen?</h2>
+  <h2 class="text-2xl font-bold mb-4">Bereit anzufangen?</h2>
   <p class="mb-4">
-    Dein Pass zu einer strahlenderen digitalen Zukunft ist nur einen Klick
-    entfernt. Schliesse dich uns an und gestalte die nächste Generation
-    verantwortungsbewusster digitaler Benutzer mit!
+    Dein Weg in eine bessere und sicherere digitale Zukunft ist nur einen Klick
+    entfernt.
   </p>
   <a
     href="{{ url_for('learn.index') }}"
     class="bg-indigo-500 text-white px-4 py-2 rounded"
     >{{ gettext("Enroll Now") }}</a
   >
-  <p class="mt-4">Scroll nicht einfach, strebe nach digitaler Exzellenz!</p>
+  <p class="mt-4">
+    Scrolle nicht einfach. Lernen noch heute und bestehe den Test!
+  </p>
 </section>
 {% endblock %}
