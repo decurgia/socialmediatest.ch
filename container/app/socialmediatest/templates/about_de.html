@@ -1,17 +1,13 @@
 {% extends "base.html" %} {% block title %}{{ gettext("About") }}{% endblock %}
-{% block content %}
-
-<header class="bg-indigo-500 text-white p-6">
-  <h1 class="text-3xl">
-    Erschliesse dein digitales Potenzial: Social Media Test- &
-    Zertifikatsprogramm
-  </h1>
-  <p>
-    Willkommen zu einer Reise der Entdeckung, des Wachstums und der digitalen
-    Ermächtigung!
-  </p>
-</header>
-
+{% block hero %}
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+  Erschliesse dein digitales Potenzial: Social Media Test- & Zertifikatsprogramm
+</h1>
+<p class="mt-6 text-lg leading-8 text-gray-600">
+  Willkommen zu einer Reise der Entdeckung, des Wachstums und der digitalen
+  Ermächtigung!
+</p>
+{% endblock %} {% block content %}
 <section class="py-8 px-4">
   <h2 class="text-2xl font-bold mb-4">Über uns</h2>
   <p class="mb-4">

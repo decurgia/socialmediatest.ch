@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}{{ gettext("About") }}{% endblock %}
+{% block hero %}
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+  Why does this site exist?
+</h1>
+<p class="mt-6 text-lg leading-8 text-gray-600">Frequently asked questions.</p>
+{% endblock %} {% block content %}
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Why?</h2>
+  <p class="mb-4">
+    As a parent I would like to enable my kid to safely be part of social media.
+  </p>
+  <p class="mb-4">
+    We once had dinner with another family. The discussion evolved around social
+    media and how to prove that we are ready to contribute or consume. At this
+    evening I decided to write a test - once passed ....
+  </p>
+</section>
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">How?</h2>
+  <ul class="list-disc ml-8 mb-4">
+    <li>Learn about the risks and opportunites of social media.</li>
+    <li>
+      Test your knowledge to assess if you're ready to get started with social
+      networks.
+    </li>
+    <li>
+      Recertify the knowledge regurarly to stay up-to-date with the latest
+      insights.
+    </li>
+    <li>Speak about social media best practice with your friends.</li>
+  </ul>
+</section>
+
+<section class="py-8 px-4 bg-gray-200">
+  <h2 class="text-2xl font-bold mb-4">What?</h2>
+  <p class="mb-4">
+    We are driven by a set of core values that guide everything we do:
+  </p>
+  <ul class="list-disc ml-8 mb-4">
+    <li>
+      <strong>Empowerment:</strong> We believe in empowering individuals with
+      the knowledge and skills to thrive in the digital age.
+    </li>
+    <li>
+      <strong>Privacy:</strong> We store the least required information to
+      identify certificate holders. In this case it's a hashed value of the
+      email address.
+    </li>
+  </ul>
+</section>
+
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">About me</h2>
+  <p class="mb-4">
+    Our team is composed of passionate educators, digital experts, and industry
+    professionals dedicated to guiding the next generation of digital leaders.
+  </p>
+  <!-- Include team member profiles or links to individual pages if applicable -->
+</section>
+
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Contact</h2>
+  <p class="mb-4">
+    Have questions or want to provide feedback? I'd love to hear from you!
+  </p>
+  <p class="mb-4">
+    Email:
+    <a href="mailto:info@socialmediacert.com">info@socialmediacert.com</a>
+  </p>
+</section>
+{% endblock %}

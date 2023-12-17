@@ -1,14 +1,12 @@
 {% extends "base.html" %} {% block title %}{{ gettext("Welcome") }}{% endblock
-%} {% block content %}
-<header class="text-center">
-  <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-    Ready to use social media?
-  </h1>
-  <p class="mt-6 text-lg leading-8 text-gray-600">
-    Social Media Test & Certificate Program
-  </p>
-</header>
-
+%} {% block hero %}
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+  Ready to use social media?
+</h1>
+<p class="mt-6 text-lg leading-8 text-gray-600">
+  Social Media Test & Certificate Program
+</p>
+{% endblock %} {% block content %}
 <section id="for-you" class="py-8 px-4">
   <h2 class="text-2xl font-bold mb-4">For You</h2>
   <p class="mb-4">

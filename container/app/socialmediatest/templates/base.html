@@ -69,8 +69,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
-    <div class="min-h-full">
+  <body class="min-h-full">
+    <header>
       <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
@@ -106,32 +106,26 @@
           </div>
         </div>
       </nav>
-      <main>
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <div id="content">{% block content %}{% endblock %}</div>
-        </div>
-      </main>
-      <footer class="bg-white">
-        <div
-          class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8"
-        >
-          <nav
-            class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
-            aria-label="Footer"
+    </header>
+    <main class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <div id="hero" class="text-center">{% block hero %}{% endblock %}</div>
+      <div id="content">{% block content %}{% endblock %}</div>
+    </main>
+    <footer class="bg-white">
+      <div
+        class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8"
+      >
+        <nav class="-mb-6 text-center sm:space-x-12" aria-label="Footer">
+          <a
+            href="{{ url_for('about') }}"
+            class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+            >{{ gettext("About") }}</a
           >
-            <div class="pb-6">
-              <a
-                href="{{ url_for('about') }}"
-                class="text-sm leading-6 text-gray-600 hover:text-gray-900"
-                >{{ gettext("About") }}</a
-              >
-            </div>
-          </nav>
-          <p class="mt-10 text-center text-xs leading-5 text-gray-500">
-            &copy; 2023 Gian Luca Decurtins. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+        </nav>
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500">
+          &copy; 2023 Gian Luca Decurtins. All rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

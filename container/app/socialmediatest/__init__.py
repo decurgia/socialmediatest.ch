@@ -48,7 +48,7 @@ def create_app(test_config=None):
     def about():
         if get_locale() == "de":
             return render_template("about_de.html")
-        return render_template("about.html")
+        return render_template("about_en.html")
 
     @app.route("/favicon.ico")
     @app.route("/robots.txt")
