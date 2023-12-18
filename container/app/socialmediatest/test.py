@@ -14,7 +14,7 @@ from . import get_locale
 bp = Blueprint("test", __name__, url_prefix="/test")
 
 
-@bp.route("/")
+@bp.route("")
 def index():
     db = get_db()
     tests = db.execute(

@@ -14,7 +14,7 @@ from . import get_locale
 bp = Blueprint("certificate", __name__, url_prefix="/certificate")
 
 
-@bp.route("/", methods=("GET", "POST"))
+@bp.route("", methods=("GET", "POST"))
 def index():
     if request.method == "POST":
         email = request.form["email"]
