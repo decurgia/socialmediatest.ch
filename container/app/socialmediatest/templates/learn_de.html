@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}{{ gettext("Learn") }}{% endblock %}
+{% block hero %}
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+  Es gibt viel zu Entdecken!
+</h1>
+<p class="mt-6 text-lg leading-8 text-gray-600">
+  Bereite dich auf Social Media vor.
+</p>
+{% endblock %} {% block content %}
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Lernressourcen</h2>
+  <p class="mb-4">
+    Bereite dich auf den Social Media Zertifizierungstest mit einer Vielzahl von
+    Lernquellen vor. Hier ist eine Liste, um dich durch deine Lernreise zu
+    führen.
+  </p>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-2">Jugend und Medien</h3>
+    <p>
+      Die Schweizer Platform zur Förderung von Medienkompetenz informiert über
+      <a
+        href="https://www.jugendundmedien.ch/digitale-medien/soziale-medien"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Soziale Medien</a
+      >
+      und bietet
+      <a
+        href="https://www.jugendundmedien.ch/empfehlungen"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Empfehlungen</a
+      >.
+    </p>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-2">So geht Medien</h3>
+    <p>
+      Die Initiative von ARD, ZDF und Deutschlandradio bietet auf ihrer
+      <a
+        href="https://www.br.de/sogehtmedien/index.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Website</a
+      >
+      Material zu verschiedenen Themen. Spannend sind die Unterrichtseinheiten
+      zur
+      <a
+        href="https://www.br.de/sogehtmedien/stimmt-das/recherche/index.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Recherche - So klappt der Faktencheck</a
+      >
+      und zu
+      <a
+        href="https://www.br.de/sogehtmedien/medien-basics/social-media-sicherheit/social-media-sicherheit-100.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Sicher unterwegs auf Social Media</a
+      >.
+    </p>
+  </div>
+
+  <section class="py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4">Zusätzliche Tipps</h2>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Schau regelmässig vorbei! Social Media ändert sich ständig.</li>
+      <li>
+        Sprich mit deinen Freunden und Eltern über den Umgang mit den sozialen
+        Medien.
+      </li>
+    </ul>
+  </section>
+</section>
+{% endblock %}

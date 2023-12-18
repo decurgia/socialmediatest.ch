@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block title %}{{ gettext("Learn") }}{% endblock %}
+{% block hero %}
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+  There's much to discover!
+</h1>
+<p class="mt-6 text-lg leading-8 text-gray-600">
+  Prepare yourself for social media.
+</p>
+{% endblock %} {% block content %}
+<section class="py-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Learning Resources</h2>
+  <p class="mb-4">
+    Prepare for the social media certification test with a variety of learning
+    sources. Here is a list to guide you through your learning journey.
+  </p>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-2">Youth and Media</h3>
+    <p>
+      The Swiss platform for promoting media literacy provides information about
+      <a
+        href="https://www.jugendundmedien.ch/digitale-medien/soziale-medien"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >social media</a
+      >
+      and offers
+      <a
+        href="https://www.jugendundmedien.ch/empfehlungen"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >recommendations</a
+      >.
+    </p>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold mb-2">That's How Media Works</h3>
+    <p>
+      The initiative by ARD, ZDF, and Deutschlandradio offers material on
+      various topics on their
+      <a
+        href="https://www.br.de/sogehtmedien/index.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >website</a
+      >. Interesting are the teaching units on
+      <a
+        href="https://www.br.de/sogehtmedien/stimmt-das/recherche/index.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >research - How fact-checking works</a
+      >
+      and on
+      <a
+        href="https://www.br.de/sogehtmedien/medien-basics/social-media-sicherheit/social-media-sicherheit-100.html"
+        class="font-medium text-indigo-600 dark:text-indigo-500 hover:underline"
+        >Staying safe on social media</a
+      >.
+    </p>
+  </div>
+
+  <section class="py-8 px-4">
+    <h2 class="text-2xl font-bold mb-4">Additional Tips</h2>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Check back regularly! Social media is constantly changing.</li>
+      <li>Talk with your friends and parents about handling social media.</li>
+    </ul>
+  </section>
+</section>
+{% endblock %}

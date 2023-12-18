@@ -44,6 +44,12 @@ def create_app(test_config=None):
             return render_template("index_de.html")
         return render_template("index_en.html")
 
+    @app.route("/learn")
+    def learn():
+        if get_locale() == "de":
+            return render_template("learn_de.html")
+        return render_template("learn_en.html")
+
     @app.route("/about")
     def about():
         if get_locale() == "de":
@@ -55,11 +61,9 @@ def create_app(test_config=None):
     def static_from_root():
         return send_from_directory(app.static_folder, request.path[1:])
 
-    from . import learn
     from . import test
     from . import certificate
 
-    app.register_blueprint(learn.bp)
     app.register_blueprint(test.bp)
     app.register_blueprint(certificate.bp)
 
