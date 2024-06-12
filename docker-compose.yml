@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  socialmediacert:
+  socialmediatest:
     image: ghcr.io/gldecurtins/socialmediatest:latest
     ports:
       - "8080:8000"
